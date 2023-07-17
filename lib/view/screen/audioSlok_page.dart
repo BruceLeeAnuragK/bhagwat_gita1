@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/AudioProvider.dart';
+import '../../provider/AudioProvider.dart';
 
-class SongPage extends StatefulWidget {
-  const SongPage({Key? key}) : super(key: key);
+class Audio_Slok_Page extends StatefulWidget {
+  const Audio_Slok_Page({Key? key}) : super(key: key);
 
   @override
-  State<SongPage> createState() => _SongPageState();
+  State<Audio_Slok_Page> createState() => _Audio_Slok_PageState();
 }
 
-class _SongPageState extends State<SongPage> {
+class _Audio_Slok_PageState extends State<Audio_Slok_Page> {
   @override
   Widget build(BuildContext context) {
     return Consumer<AudioProvider>(

@@ -24,7 +24,7 @@ class _SlokDetailPageState extends State<SlokDetailPage> {
           itemBuilder: (context, index) => Card(
             shadowColor: Colors.brown,
             child: ListTile(
-              title: Text("${provider.AllSloks[index].title}"),
+              title: Text("${provider.AllSloks[index].verse_order}"),
               leading: Text("${provider.AllSloks[index].id}"),
             ),
           ),

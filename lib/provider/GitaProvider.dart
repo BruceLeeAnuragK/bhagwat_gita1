@@ -15,6 +15,7 @@ class GitaProvider extends ChangeNotifier {
   }
 
   changeIndex({required int index}) {
+    loadJSONSLOK(index: index);
     notifyListeners();
   }
 
@@ -38,13 +39,13 @@ class GitaProvider extends ChangeNotifier {
   GitaProvider() {
     loadJSON();
     loadJSONAUTH();
-    loadJSONSLOK();
+    loadJSONSLOK(index: 0);
   }
   List<Sloks> AllSloks = [];
-  loadJSONSLOK() async {
-    String slok = await rootBundle.loadString("assets/json/ch1.json");
+  loadJSONSLOK({required int index}) async {
+    String slok = await rootBundle.loadString("assets/json/slok.json");
     List allSloks = jsonDecode(slok);
-    AllSloks = allSloks.map((e) => Sloks.fromMap(slok: e)).toList();
+    AllSloks = allSloks.map((index) => Sloks.fromMap(slok: index)).toList();
   }
 
   loadJSON() async {

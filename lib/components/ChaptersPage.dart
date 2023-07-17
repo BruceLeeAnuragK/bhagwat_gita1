@@ -89,6 +89,7 @@ class _ChaptersPageState extends State<ChaptersPage> {
                     itemBuilder: (context, index) => Card(
                       child: ListTile(
                         onTap: () {
+                          provider.changeIndex(index: index);
                           Navigator.of(context).pushNamed("slok_detail_page");
                         },
                         title: Text(

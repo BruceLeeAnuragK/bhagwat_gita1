@@ -24,6 +24,7 @@ class _AudioDetailPageState extends State<AudioDetailPage>
 
   @override
   Widget build(BuildContext context) {
+    int index = ModalRoute.of(context)!.settings.arguments as int;
     return Consumer<AudioProvider>(
       builder: (context, provider, child) => SafeArea(
         child: Scaffold(
@@ -64,8 +65,7 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                       color: Colors.brown,
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
-                        image: NetworkImage(
-                            "${provider.AudioImage.indexOf(context)}"),
+                        image: NetworkImage("${provider.AudioImage[index]}"),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -189,7 +189,7 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                 Container(
                   height: 500,
                   child: ListView.builder(
-                    itemCount: provider.Chapter1Audio.length,
+                    itemCount: provider.SlokImage.length,
                     itemBuilder: (context, index) => Card(
                       color: Colors.brown,
                       child: ListTile(
@@ -202,12 +202,13 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                         ),
                         leading: CircleAvatar(
                           foregroundImage:
-                              NetworkImage(provider.AudioImage[index]),
+                              NetworkImage(provider.SlokImage[index]),
                         ),
                         onTap: () {
                           provider.changeIndex(index: index);
                           Navigator.of(context).pushNamed(
                             "audio_detail_page",
+                            arguments: index,
                           );
                         },
                       ),
