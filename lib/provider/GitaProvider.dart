@@ -14,10 +14,10 @@ class GitaProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  changeIndex({required int index}) {
-    loadJSONSLOK(index: index);
-    notifyListeners();
-  }
+  // changeIndex({required int index}) {
+  //   loadJSONSLOK(index: index);
+  //   notifyListeners();
+  // }
 
   List<String> imageList = [
     "https://i.pinimg.com/564x/d4/58/10/d4581099199b060b11b0993c892a933e.jpg",
@@ -39,13 +39,14 @@ class GitaProvider extends ChangeNotifier {
   GitaProvider() {
     loadJSON();
     loadJSONAUTH();
-    loadJSONSLOK(index: 0);
+    loadJSONSLOK();
   }
   List<Sloks> AllSloks = [];
-  loadJSONSLOK({required int index}) async {
+  loadJSONSLOK() async {
     String slok = await rootBundle.loadString("assets/json/slok.json");
     List allSloks = jsonDecode(slok);
-    AllSloks = allSloks.map((index) => Sloks.fromMap(slok: index)).toList();
+    AllSloks = allSloks.map((e) => Sloks.fromMap(adh: e)).toList();
+    // AllSloks = allSloks.map((index) => Sloks.fromMap(slok: index)).toList();
   }
 
   loadJSON() async {

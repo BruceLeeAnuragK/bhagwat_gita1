@@ -12,6 +12,7 @@ class SlokDetailPage extends StatefulWidget {
 class _SlokDetailPageState extends State<SlokDetailPage> {
   @override
   Widget build(BuildContext context) {
+    int indexData = ModalRoute.of(context)!.settings.arguments as int;
     return Consumer<GitaProvider>(builder: (context, provider, child) {
       return Scaffold(
         appBar: AppBar(
@@ -24,8 +25,9 @@ class _SlokDetailPageState extends State<SlokDetailPage> {
           itemBuilder: (context, index) => Card(
             shadowColor: Colors.brown,
             child: ListTile(
-              title: Text("${provider.AllSloks[index].verse_order}"),
-              leading: Text("${provider.AllSloks[index].id}"),
+              title:
+                  Text("${provider.AllSloks[index].adhyay[indexData].title}"),
+              leading: Text("${provider.AllSloks[index].adhyay[indexData].id}"),
             ),
           ),
         ),

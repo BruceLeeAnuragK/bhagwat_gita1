@@ -1,4 +1,14 @@
 class Sloks {
+  final List<Adhyay> adhyay;
+  Sloks({required this.adhyay});
+  factory Sloks.fromMap({required Map<String, dynamic> adh}) {
+    return Sloks(
+      adhyay: adh["adhyay"],
+    );
+  }
+}
+
+class Adhyay {
   final int chapter_id;
   final int chapter_number;
   final int externalId;
@@ -10,7 +20,7 @@ class Sloks {
   final String transliteration;
   final String word_meaning;
 
-  Sloks({
+  Adhyay({
     required this.chapter_id,
     required this.chapter_number,
     required this.externalId,
@@ -23,8 +33,8 @@ class Sloks {
     required this.word_meaning,
   });
 
-  factory Sloks.fromMap({required Map slok}) {
-    return Sloks(
+  factory Adhyay.fromMap({required Map<String, dynamic> slok}) {
+    return Adhyay(
         chapter_id: slok["chapter_id"],
         chapter_number: slok["chapter_number"],
         externalId: slok["externalId"],
