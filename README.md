@@ -15,7 +15,8 @@ verse screens, and multi-language support, the app offers a comprehensive soluti
 explore and engage with this sacred text.
 
 Project Objectives:
-Local JSON Bank: The app leverages local JSON storage to efficiently store and retrieve
+Local JSON Bank: 
+The app leverages local JSON storage to efficiently store and retrieve
 Bhagvat Geeta verses. This approach ensures quick access to the verses, even in offline mode,
 enabling seamless reading and study of the sacred text.
 Like Bhagvad Geeta's Verse: Users can like or bookmark specific verses, allowing them to
@@ -31,14 +32,19 @@ verses, the app includes relevant images or illustrations for each chapter of th
 
 These images are displayed alongside the corresponding verses, providing a holistic learning
 experience.
-Splash Screen: The app features a captivating splash screen that engages users and sets the tone
+
+Splash Screen: 
+The app features a captivating splash screen that engages users and sets the tone
 for their spiritual journey. The splash screen can showcase the app logo, a meaningful image, or
 a motivational quote, welcoming users to the world of Bhagvat Geeta.
 Detail Screen for Each Verse: Every verse in the Bhagvat Geeta is given special attention with
 a dedicated detail screen. Users can access in-depth explanations, commentaries, and
 interpretations of each verse, allowing for a deeper understanding and reflection on the
 teachings.
-Multi-language Support: Recognizing the diversity of languages in which the Bhagvat Geeta
+
+
+Multi-language Support: 
+Recognizing the diversity of languages in which the Bhagvat Geeta
 has been translated, "Departure" is a multi-language app. It provides support for various
 languages, enabling users to read and study the Bhagvat Geeta in their preferred language,
 making the app inclusive and accessible to a wider audience.
