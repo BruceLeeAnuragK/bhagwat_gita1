@@ -1,4 +1,4 @@
-
+![Screenshot_20230722_153554](https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/1bb45a09-bf76-48ac-9207-8715bb5c78aa)
 
 Project Definition: Bhagvat Geeta Mobile App (Departure)
 
@@ -42,5 +42,12 @@ Multi-language Support: Recognizing the diversity of languages in which the Bhag
 has been translated, "Departure" is a multi-language app. It provides support for various
 languages, enabling users to read and study the Bhagvat Geeta in their preferred language,
 making the app inclusive and accessible to a wider audience.
+
+
+<img src="https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/9aab0862-0f35-4a7c-b740-bc56b690f125" height="200">
+<img src="https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/a53ac6bc-46fa-441e-8895-757c286b9b20" height="200">
+<img src="https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/936a3e8b-4797-49de-9f9d-67a766fa0d44" height="200">
+<img src="https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/ece5476a-8ca9-4026-b37b-89d134fbe6c4" height="200">
+
 
 
