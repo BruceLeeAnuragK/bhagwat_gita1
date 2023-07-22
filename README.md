@@ -1,4 +1,4 @@
-![Screenshot_20230722_153554](https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/1bb45a09-bf76-48ac-9207-8715bb5c78aa)
+
 
 Project Definition: Bhagvat Geeta Mobile App (Departure)
 
