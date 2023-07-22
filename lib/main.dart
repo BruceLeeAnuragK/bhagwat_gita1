@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
         themeMode: provider.isDark ? ThemeMode.dark : ThemeMode.light,
+        initialRoute: "splash_screen",
         routes: {
           "chaters_page": (context) => ChaptersPage(),
           "splash_screen": (context) => IntroScreen(),

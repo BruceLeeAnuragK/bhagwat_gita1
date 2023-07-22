@@ -85,7 +85,7 @@ class _ChaptersPageState extends State<ChaptersPage> {
                 child: SizedBox(
                   height: 300,
                   child: ListView.builder(
-                    itemCount: provider.allchapter.length,
+                    itemCount: provider.AllSloks.length,
                     itemBuilder: (context, index) => Card(
                       child: ListTile(
                         onTap: () {

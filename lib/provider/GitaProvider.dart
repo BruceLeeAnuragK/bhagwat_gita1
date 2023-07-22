@@ -14,6 +14,12 @@ class GitaProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool isEnglish = false;
+  void changeLanguage({required bool val}) {
+    isEnglish = val;
+    notifyListeners();
+  }
+
   // changeIndex({required int index}) {
   //   loadJSONSLOK(index: index);
   //   notifyListeners();
