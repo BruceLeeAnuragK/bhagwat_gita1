@@ -1,5 +1,6 @@
 [
-  {"chapter":[
+  {
+    "chapter":[
     {
       "chapter_id": 1,
       "chapter_number": 1,
@@ -564,8 +565,10 @@
       "transliteration": "sañjaya uvācha\nevam uktvārjunaḥ saṅkhye rathopastha upāviśhat\nvisṛijya sa-śharaṁ chāpaṁ śhoka-saṁvigna-mānasaḥ\n",
       "word_meanings": "sañjayaḥ uvācha—Sanjay said; evam uktvā—speaking thus; arjunaḥ—Arjun; saṅkhye—in the battlefield; ratha upasthe—on the chariot; upāviśhat—sat; visṛijya—casting aside; sa-śharam—along with arrows; chāpam—the bow; śhoka—with grief; saṁvigna—distressed; mānasaḥ—mind\n"
     }
-  ]},
-  {"chapter":[
+  ]
+  },
+  {
+    "chapter":[
     {
       "chapter_id": 2,
       "chapter_number": 2,

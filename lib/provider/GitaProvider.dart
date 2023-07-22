@@ -45,7 +45,7 @@ class GitaProvider extends ChangeNotifier {
   loadJSONSLOK() async {
     String slok = await rootBundle.loadString("assets/json/slok.json");
     List allSloks = jsonDecode(slok);
-    AllSloks = allSloks.map((e) => Sloks.fromMap(adh: e)).toList();
+    AllSloks = allSloks.map((e) => Sloks.fromJson(json: e)).toList();
     // AllSloks = allSloks.map((index) => Sloks.fromMap(slok: index)).toList();
   }
 

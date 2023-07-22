@@ -1,49 +1,80 @@
+// To parse this JSON data, do
+//
+//     final slokes = slokesFromJson(jsonString);
+
+import 'dart:convert';
+
+// List<Sloks> slokesFromJson(String str) =>
+//     List<Sloks>.from(json.decode(str).map((x) => Sloks.fromJson(x)));
+//
+// String slokesToJson(List<Sloks> data) =>
+//     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
 class Sloks {
-  final List<Adhyay> adhyay;
-  Sloks({required this.adhyay});
-  factory Sloks.fromMap({required Map<String, dynamic> adh}) {
-    return Sloks(
-      adhyay: adh["adhyay"],
-    );
-  }
+  List<Chapter> chapter;
+
+  Sloks({
+    required this.chapter,
+  });
+
+  factory Sloks.fromJson(Map<String, dynamic> json) => Sloks(
+        chapter:
+            List<Chapter>.from(json["chapter"].map((x) => Chapter.fromJson(x))),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "chapter": List<dynamic>.from(chapter.map((x) => x.toJson())),
+      };
 }
 
-class Adhyay {
-  final int chapter_id;
-  final int chapter_number;
-  final int externalId;
-  final int id;
-  final String text;
-  final String title;
-  final int verse_number;
-  final int verse_order;
-  final String transliteration;
-  final String word_meaning;
+class Chapter {
+  int chapterId;
+  int chapterNumber;
+  int externalId;
+  int id;
+  String text;
+  String title;
+  int verseNumber;
+  int verseOrder;
+  String transliteration;
+  String wordMeanings;
 
-  Adhyay({
-    required this.chapter_id,
-    required this.chapter_number,
+  Chapter({
+    required this.chapterId,
+    required this.chapterNumber,
     required this.externalId,
     required this.id,
     required this.text,
     required this.title,
-    required this.verse_number,
-    required this.verse_order,
+    required this.verseNumber,
+    required this.verseOrder,
     required this.transliteration,
-    required this.word_meaning,
+    required this.wordMeanings,
   });
 
-  factory Adhyay.fromMap({required Map<String, dynamic> slok}) {
-    return Adhyay(
-        chapter_id: slok["chapter_id"],
-        chapter_number: slok["chapter_number"],
-        externalId: slok["externalId"],
-        id: slok["id"],
-        text: slok["text"],
-        title: slok["title"],
-        verse_number: slok["verse_number"],
-        verse_order: slok["verse_order"],
-        transliteration: slok["transliteration"],
-        word_meaning: slok["word_meaning"]);
-  }
+  factory Chapter.fromJson(Map<String, dynamic> json) => Chapter(
+        chapterId: json["chapter_id"],
+        chapterNumber: json["chapter_number"],
+        externalId: json["externalId"],
+        id: json["id"],
+        text: json["text"],
+        title: json["title"],
+        verseNumber: json["verse_number"],
+        verseOrder: json["verse_order"],
+        transliteration: json["transliteration"],
+        wordMeanings: json["word_meanings"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "chapter_id": chapterId,
+        "chapter_number": chapterNumber,
+        "externalId": externalId,
+        "id": id,
+        "text": text,
+        "title": title,
+        "verse_number": verseNumber,
+        "verse_order": verseOrder,
+        "transliteration": transliteration,
+        "word_meanings": wordMeanings,
+      };
 }

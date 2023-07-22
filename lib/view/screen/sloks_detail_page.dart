@@ -26,8 +26,9 @@ class _SlokDetailPageState extends State<SlokDetailPage> {
             shadowColor: Colors.brown,
             child: ListTile(
               title:
-                  Text("${provider.AllSloks[index].adhyay[indexData].title}"),
-              leading: Text("${provider.AllSloks[index].adhyay[indexData].id}"),
+                  Text("${provider.AllSloks[index].chapter[indexData].title}"),
+              leading:
+                  Text("${provider.AllSloks[index].chapter[indexData].id}"),
             ),
           ),
         ),
