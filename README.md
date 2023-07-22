@@ -55,5 +55,8 @@ making the app inclusive and accessible to a wider audience.
 <img src="https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/936a3e8b-4797-49de-9f9d-67a766fa0d44" height="200">
 <img src="https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/ece5476a-8ca9-4026-b37b-89d134fbe6c4" height="200">
 
+https://github.com/BruceLeeAnuragK/bhagwat_gita1/assets/113960212/77a8f5c6-165c-4a72-87f3-c90f8f3afdd7
+
+
 
 
