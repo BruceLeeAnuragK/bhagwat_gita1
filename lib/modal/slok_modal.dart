@@ -17,7 +17,7 @@ class Sloks {
     required this.chapter,
   });
 
-  factory Sloks.fromJson(Map<String, dynamic> json) => Sloks(
+  factory Sloks.fromJson({required Map<String, dynamic> json}) => Sloks(
         chapter:
             List<Chapter>.from(json["chapter"].map((x) => Chapter.fromJson(x))),
       );

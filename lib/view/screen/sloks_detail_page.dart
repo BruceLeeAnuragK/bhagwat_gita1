@@ -27,8 +27,8 @@ class _SlokDetailPageState extends State<SlokDetailPage> {
             child: ListTile(
               title:
                   Text("${provider.AllSloks[index].chapter[indexData].title}"),
-              leading:
-                  Text("${provider.AllSloks[index].chapter[indexData].id}"),
+              leading: Text(
+                  "Chapter ${provider.AllSloks[indexData].chapter[indexData].id}"),
             ),
           ),
         ),
