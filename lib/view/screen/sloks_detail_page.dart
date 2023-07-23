@@ -59,7 +59,7 @@ class _SlokDetailPageState extends State<SlokDetailPage> {
           ],
         ),
         body: ListView.builder(
-          itemCount: provider.AllSloks.length,
+          itemCount: provider.AllSloks[indexData].chapter.length,
           itemBuilder: (context, index) => Card(
             shadowColor: Colors.brown,
             child: ListTile(

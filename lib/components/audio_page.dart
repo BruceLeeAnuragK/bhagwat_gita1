@@ -44,43 +44,43 @@ class _SongPageState extends State<SongPage> {
           ),
         ),
         body: StreamBuilder(
-            stream: provider.currrentPosition,
-            builder: (context, snapShot) {
-              if (snapShot.hasData) {
-                return ListView.builder(
-                  itemCount: provider.SlokImage.length,
-                  itemBuilder: (context, index) => Card(
-                    color: Colors.brown,
-                    child: ListTile(
-                      title: Text(
-                        "Chapter ${index + 1}",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
+          stream: provider.currrentPosition,
+          builder: (context, snapShot) {
+            if (snapShot.hasData) {
+              return ListView.builder(
+                itemCount: provider.SlokImage.length,
+                itemBuilder: (context, index) => Card(
+                  color: Colors.brown,
+                  child: ListTile(
+                    title: Text(
+                      "Chapter ${index + 1}",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
                       ),
-                      leading: CircleAvatar(
-                        foregroundImage:
-                            NetworkImage(provider.SlokImage[index]),
-                      ),
-                      onTap: () {
-                        provider.changeIndex(index: index);
-                        Navigator.of(context).pushNamed(
-                          "audio_detail_page",
-                          arguments: index,
-                        );
-                      },
                     ),
+                    leading: CircleAvatar(
+                      foregroundImage: NetworkImage(provider.SlokImage[index]),
+                    ),
+                    onTap: () {
+                      provider.changeIndex(index: index);
+                      Navigator.of(context).pushNamed(
+                        "audio_detail_page",
+                        arguments: index,
+                      );
+                    },
                   ),
-                );
-              } else {
-                return Center(
-                  child: CircularProgressIndicator(
-                    color: Colors.brown,
-                  ),
-                );
-              }
-            }),
+                ),
+              );
+            } else {
+              return Center(
+                child: CircularProgressIndicator(
+                  color: Colors.brown,
+                ),
+              );
+            }
+          },
+        ),
       ),
     );
   }

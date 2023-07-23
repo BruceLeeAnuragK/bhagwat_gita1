@@ -4,7 +4,6 @@ import 'package:bhagwat_gita1/provider/GitaProvider.dart';
 import 'package:bhagwat_gita1/view/screen/audio_detail_page.dart';
 import 'package:bhagwat_gita1/view/screen/home_page.dart';
 import 'package:bhagwat_gita1/view/screen/sloks_detail_page.dart';
-import 'package:bhagwat_gita1/view/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +38,6 @@ class MyApp extends StatelessWidget {
         initialRoute: "splash_screen",
         routes: {
           "chaters_page": (context) => ChaptersPage(),
-          "splash_screen": (context) => IntroScreen(),
           "/": (context) => MyHomePage(title: "Bhagwat Gita"),
           "audio_detail_page": (context) => AudioDetailPage(),
           "slok_detail_page": (context) => SlokDetailPage(),
