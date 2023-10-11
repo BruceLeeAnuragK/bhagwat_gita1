@@ -1,5 +1,10 @@
+import 'dart:convert';
+
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../modal/chapter_model.dart';
 
 class AudioProvider extends ChangeNotifier {
   bool isDark = false;
@@ -615,37 +620,6 @@ class AudioProvider extends ChangeNotifier {
     },
     {
       "audio": [
-        {"slok": "assets/audio/14/1.mp3"},
-        {"slok": "assets/audio/14/2.mp3"},
-        {"slok": "assets/audio/14/3.mp3"},
-        {"slok": "assets/audio/14/4.mp3"},
-        {"slok": "assets/audio/14/5.mp3"},
-        {"slok": "assets/audio/14/6.mp3"},
-        {"slok": "assets/audio/14/7.mp3"},
-        {"slok": "assets/audio/14/8.mp3"},
-        {"slok": "assets/audio/14/9.mp3"},
-        {"slok": "assets/audio/14/10.mp3"},
-        {"slok": "assets/audio/14/11.mp3"},
-        {"slok": "assets/audio/14/12.mp3"},
-        {"slok": "assets/audio/14/13.mp3"},
-        {"slok": "assets/audio/14/14.mp3"},
-        {"slok": "assets/audio/14/15.mp3"},
-        {"slok": "assets/audio/14/16.mp3"},
-        {"slok": "assets/audio/14/17.mp3"},
-        {"slok": "assets/audio/14/18.mp3"},
-        {"slok": "assets/audio/14/19.mp3"},
-        {"slok": "assets/audio/14/20.mp3"},
-        {"slok": "assets/audio/14/21.mp3"},
-        {"slok": "assets/audio/14/22.mp3"},
-        {"slok": "assets/audio/14/23.mp3"},
-        {"slok": "assets/audio/14/24.mp3"},
-        {"slok": "assets/audio/14/25.mp3"},
-        {"slok": "assets/audio/14/26.mp3"},
-        {"slok": "assets/audio/14/27.mp3"},
-      ],
-    },
-    {
-      "audio": [
         {"slok": "assets/audio/15/1.mp3"},
         {"slok": "assets/audio/15/2.mp3"},
         {"slok": "assets/audio/15/3.mp3"},
@@ -811,7 +785,6 @@ class AudioProvider extends ChangeNotifier {
       ],
     },
   ];
-  List Chapter2Audio = [];
 
   List SlokImage = [
     "https://i.pinimg.com/564x/d4/58/10/d4581099199b060b11b0993c892a933e.jpg",
@@ -928,11 +901,12 @@ class AudioProvider extends ChangeNotifier {
 
   AudioProvider() {
     init(index: 0);
+    loadJSON();
   }
 
   init({required int index}) {
     assetsAudioPlayer
-        .open(Audio(ChapterAudio[index]),
+        .open(Audio(ChapterAudio[index]["audio"][index]["slok"]),
             autoStart: false, showNotification: true)
         .then((value) {
       totalDuration = assetsAudioPlayer.current.value!.audio.duration;
@@ -966,5 +940,16 @@ class AudioProvider extends ChangeNotifier {
 
   get currrentPosition {
     return assetsAudioPlayer.currentPosition;
+  }
+
+  List<Chapters> allchapter = [];
+  loadJSON() async {
+    String res = await rootBundle.loadString("assets/json/chapter.json");
+    List allData = jsonDecode(res);
+    allchapter = allData.map((e) => Chapters.fromMap(data: e)).toList();
+    print("333333333333333333333333333333333");
+    print(allchapter);
+    print(allchapter.length);
+    print("333333333333333333333333333333333");
   }
 }

@@ -14,53 +14,26 @@ class _SongPageState extends State<SongPage> {
   @override
   Widget build(BuildContext context) {
     return Consumer<AudioProvider>(
-      builder: (context, provider, child) => Scaffold(
-        appBar: AppBar(
-          actions: [
-            provider.isDark
-                ? Icon(
-                    Icons.dark_mode_sharp,
-                    size: 40,
-                    color: Colors.black,
-                  )
-                : Icon(
-                    Icons.sunny,
-                    size: 40,
-                    color: Colors.white,
-                  ),
-            SizedBox(
-              width: 20,
-            ),
-          ],
-          centerTitle: true,
-          backgroundColor: Colors.brown,
-          title: Text(
-            "Audio Format",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: provider.isDark ? Colors.black : Colors.white,
-              fontSize: 20,
-            ),
-          ),
-        ),
-        body: StreamBuilder(
-          stream: provider.currrentPosition,
+      builder: (context, provider, child) => StreamBuilder(
+          stream: provider.assetsAudioPlayer.currentPosition,
           builder: (context, snapShot) {
             if (snapShot.hasData) {
               return ListView.builder(
-                itemCount: provider.SlokImage.length,
+                itemCount: provider.ChapterAudio.length,
                 itemBuilder: (context, index) => Card(
                   color: Colors.brown,
                   child: ListTile(
                     title: Text(
-                      "Chapter ${index + 1}",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
+                      provider.allchapter[index].name,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
                       ),
                     ),
                     leading: CircleAvatar(
-                      foregroundImage: NetworkImage(provider.SlokImage[index]),
+                      foregroundImage: NetworkImage(
+                        provider.SlokImage[index],
+                      ),
                     ),
                     onTap: () {
                       provider.changeIndex(index: index);
@@ -68,20 +41,22 @@ class _SongPageState extends State<SongPage> {
                         "audio_detail_page",
                         arguments: index,
                       );
+                      print("44444444444444444444444444444444");
+                      print(provider.allchapter[index].name);
+                      print(index + 1);
+                      print("44444444444444444444444444444444");
                     },
                   ),
                 ),
               );
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(
-                  color: Colors.brown,
+                  color: Colors.green,
                 ),
               );
             }
-          },
-        ),
-      ),
+          }),
     );
   }
 }

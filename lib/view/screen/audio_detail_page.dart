@@ -24,7 +24,7 @@ class _AudioDetailPageState extends State<AudioDetailPage>
 
   @override
   Widget build(BuildContext context) {
-    int index = ModalRoute.of(context)!.settings.arguments as int;
+    int Audioindex = ModalRoute.of(context)!.settings.arguments as int;
     return Consumer<AudioProvider>(
       builder: (context, provider, child) => SafeArea(
         child: Scaffold(
@@ -65,7 +65,8 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                       color: Colors.brown,
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
-                        image: NetworkImage("${provider.AudioImage[index]}"),
+                        image:
+                            NetworkImage("${provider.AudioImage[Audioindex]}"),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -82,14 +83,14 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Slider(
-                                activeColor: Colors.brown,
-                                min: 0,
-                                max:
-                                    provider.totalDuration.inSeconds.toDouble(),
-                                value: currentPosition,
-                                onChanged: (val) {
-                                  provider.seek(seconds: val.toInt());
-                                }),
+                              activeColor: Colors.brown,
+                              min: 0,
+                              max: provider.totalDuration.inSeconds.toDouble(),
+                              value: currentPosition,
+                              onChanged: (val) {
+                                provider.seek(seconds: val.toInt());
+                              },
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -120,44 +121,47 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                               children: [
                                 Expanded(
                                   child: IconButton(
-                                      onPressed: () {
-                                        provider.skip(seconds: -10);
-                                      },
-                                      icon: const Icon(
-                                        Icons.skip_previous,
-                                        color: Colors.brown,
-                                        size: 30,
-                                      )),
+                                    onPressed: () {
+                                      provider.skip(seconds: -10);
+                                    },
+                                    icon: const Icon(
+                                      Icons.skip_previous,
+                                      color: Colors.brown,
+                                      size: 30,
+                                    ),
+                                  ),
                                 ),
                                 Expanded(
                                   child: StreamBuilder(
-                                      stream:
-                                          provider.assetsAudioPlayer.isPlaying,
-                                      builder: (context,
-                                          AsyncSnapshot<bool> snapShot) {
-                                        // snapShot.data!
-                                        //     ? animationController.forward()
-                                        //     : animationController.reverse();
+                                    stream:
+                                        provider.assetsAudioPlayer.isPlaying,
+                                    builder: (context,
+                                        AsyncSnapshot<bool> snapShot) {
+                                      // snapShot.data!
+                                      //     ? animationController.forward()
+                                      //     : animationController.reverse();
 
-                                        return IconButton(
-                                            onPressed: () {
-                                              if (snapShot.data!) {
-                                                provider.pause();
-                                                animationController.reverse();
-                                                setState(() {});
-                                              } else {
-                                                provider.play();
-                                                animationController.forward();
-                                                setState(() {});
-                                              }
-                                            },
-                                            icon: AnimatedIcon(
-                                              color: Colors.brown,
-                                              icon: AnimatedIcons.play_pause,
-                                              progress: animationController,
-                                              size: 30,
-                                            ));
-                                      }),
+                                      return IconButton(
+                                        onPressed: () {
+                                          if (snapShot.data!) {
+                                            provider.pause();
+                                            animationController.reverse();
+                                            setState(() {});
+                                          } else {
+                                            provider.play();
+                                            animationController.forward();
+                                            setState(() {});
+                                          }
+                                        },
+                                        icon: AnimatedIcon(
+                                          color: Colors.brown,
+                                          icon: AnimatedIcons.play_pause,
+                                          progress: animationController,
+                                          size: 30,
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ),
                                 Expanded(
                                   child: IconButton(
@@ -194,18 +198,19 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                       color: Colors.brown,
                       child: ListTile(
                         title: Text(
-                          "Slok ${index + 1}",
+                          "श्लोक ${index + 1}",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
                           ),
                         ),
                         leading: CircleAvatar(
-                          foregroundImage:
-                              NetworkImage(provider.SlokImage[index]),
+                          foregroundImage: NetworkImage(
+                            provider.SlokImage[index],
+                          ),
                         ),
                         onTap: () {
-                          provider.changeIndex(index: index);
+                          provider.changeIndex(index: Audioindex);
                           Navigator.of(context).pushNamed(
                             "audio_detail_page",
                             arguments: index,

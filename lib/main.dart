@@ -1,4 +1,5 @@
 import 'package:bhagwat_gita1/components/ChaptersPage.dart';
+import 'package:bhagwat_gita1/components/audio_page.dart';
 import 'package:bhagwat_gita1/provider/AudioProvider.dart';
 import 'package:bhagwat_gita1/provider/GitaProvider.dart';
 import 'package:bhagwat_gita1/view/screen/audio_detail_page.dart';
@@ -36,13 +37,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
         themeMode: provider.isDark ? ThemeMode.dark : ThemeMode.light,
-        initialRoute: "splash_screen",
+        initialRoute: "audio_page",
         routes: {
           "chaters_page": (context) => ChaptersPage(),
           "splash_screen": (context) => IntroScreen(),
           "/": (context) => MyHomePage(title: "Bhagwat Gita"),
           "audio_detail_page": (context) => AudioDetailPage(),
           "slok_detail_page": (context) => SlokDetailPage(),
+          "audio_page": (context) => SongPage(),
         },
       );
     });
