@@ -19,15 +19,17 @@ class _SongPageState extends State<SongPage> {
           builder: (context, snapShot) {
             if (snapShot.hasData) {
               return ListView.builder(
-                itemCount: provider.ChapterAudio.length,
+                itemCount: provider.allchapter.length,
                 itemBuilder: (context, index) => Card(
-                  color: Colors.brown,
+                  color: Colors.white,
+                  elevation: 2,
                   child: ListTile(
                     title: Text(
-                      provider.allchapter[index].name,
+                      " आध्याय : ${index + 1} ${provider.allchapter[index].name}",
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: Colors.brown,
                         fontSize: 15,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     leading: CircleAvatar(

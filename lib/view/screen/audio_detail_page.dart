@@ -44,7 +44,7 @@ class _AudioDetailPageState extends State<AudioDetailPage>
             ),
             centerTitle: true,
             title: Text(
-              "The Audio Player",
+              " आध्याय : ${Audioindex + 1} ${provider.allchapter[Audioindex].name}",
               style: TextStyle(
                 fontSize: 20,
                 color: provider.isDark ? Colors.black : Colors.white,
@@ -193,7 +193,7 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                 Container(
                   height: 500,
                   child: ListView.builder(
-                    itemCount: provider.SlokImage.length,
+                    itemCount: provider.ChapterAudio.length,
                     itemBuilder: (context, index) => Card(
                       color: Colors.brown,
                       child: ListTile(
@@ -205,12 +205,14 @@ class _AudioDetailPageState extends State<AudioDetailPage>
                           ),
                         ),
                         leading: CircleAvatar(
-                          foregroundImage: NetworkImage(
-                            provider.SlokImage[index],
-                          ),
+                          child: Text("${index + 1}"),
+                          //   foregroundImage: NetworkImage(
+                          //     provider.SlokImage[index],
+                          //   ),
+                          // ),
                         ),
                         onTap: () {
-                          provider.changeIndex(index: Audioindex);
+                          provider.changeIndex(index: index);
                           Navigator.of(context).pushNamed(
                             "audio_detail_page",
                             arguments: index,
